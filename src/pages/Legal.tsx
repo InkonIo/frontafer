@@ -31,7 +31,7 @@ const content: Record<string, { title: string; sections: { heading: string; text
       },
       {
         heading: 'Contact',
-        text: 'For any privacy-related inquiries, please reach out to our Data Protection Officer at inkonio@bk.ru or by calling +7 700 123 4567.',
+        text: 'For any privacy-related inquiries, please reach out to our Data Protection Officer at inkonio@bk.ru',
       },
     ],
   },
@@ -123,7 +123,7 @@ const content: Record<string, { title: string; sections: { heading: string; text
       },
       {
         heading: 'Contact',
-        text: 'For accreditation inquiries or institutional partnerships, please contact us at inkonio@bk.ru or +7 700 123 4567. We are located in Almaty, Kazakhstan.',
+        text: 'For accreditation inquiries or institutional partnerships, please contact us at inkonio@bk.ru We are located in Almaty, Kazakhstan.',
       },
     ],
   },
@@ -208,7 +208,7 @@ export default function Legal() {
           <div style={{ marginTop: 48, padding: '24px', background: 'white', borderLeft: '3px solid #C8A84B' }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: '#777971', letterSpacing: 1, marginBottom: 8, textTransform: 'uppercase' }}>Questions?</div>
             <p style={{ fontSize: 13, color: '#4a4a48', lineHeight: 1.7 }}>
-              Contact us at <strong>inkonio@bk.ru</strong> or <strong>+7 700 123 4567</strong>.<br />
+              Contact us at <strong>inkonio@bk.ru</strong><br />
               We are based in Almaty, Kazakhstan and respond within 1 business day.
             </p>
           </div>
