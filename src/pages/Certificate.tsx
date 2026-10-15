@@ -10,18 +10,32 @@ export default function Certificate() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    const u = localStorage.getItem('user')
-    if (!token || !u) { nav('/login'); return }
+  const token = localStorage.getItem('token')
+  const u = localStorage.getItem('user')
+
+  if (token && u) {
+    // авторизован — берём из своих сертификатов
     setUser(JSON.parse(u))
-    axios.get('http://localhost:8000/api/certificates/my', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get(`${import.meta.env.VITE_API_URL}/api/certificates/my`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(r => {
         const found = r.data.find((c: any) => c.cert_id === id)
         setCert(found || null)
       })
       .catch(() => {})
       .finally(() => setLoading(false))
-  }, [id])
+  } else {
+    // не авторизован — публичный просмотр
+    axios.get(`${import.meta.env.VITE_API_URL}/api/certificates/verify/${id}`)
+      .then(r => {
+        setCert(r.data)
+        setUser({ name: r.data.holder_name })
+      })
+      .catch(() => setCert(null))
+      .finally(() => setLoading(false))
+  }
+}, [id])
 
   if (loading) return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Manrope, sans-serif', background: '#F4F3EE' }}>
