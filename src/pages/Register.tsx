@@ -45,7 +45,7 @@ export default function Register() {
         {error && <div className="auth-error">{error}</div>}
         <form onSubmit={submit}>
           <label>Полное имя</label>
-          <input value={name} onChange={e => setName(e.target.value)} placeholder="Eldana Abdykalik" required />
+          <input value={name} onChange={e => setName(e.target.value)} placeholder="Name Surname" required />
           <label>Email</label>
           <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" required />
           <label>Город</label>
