@@ -341,7 +341,6 @@ export default function Certificate() {
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 2.5, color: 'rgba(255,255,255,.28)', textTransform: 'uppercase', marginBottom: 16 }}>Contact Us</div>
               {[
                 { icon: '✉', label: 'inkonio@bk.ru' },
-                { icon: '📞', label: '+7 700 123 4567' },
                 { icon: '🌐', label: 'levelup.kz' },
                 { icon: '📍', label: 'Almaty, Kazakhstan' },
               ].map(({ icon, label }) => (
